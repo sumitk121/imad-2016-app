@@ -32,6 +32,15 @@ app.get('/counter',function(req,res){
     res.send(counter.toString());
 });
 
+var names=[];
+app.get('/submit-name/:name',function(req,res){
+   //get the name from the request
+   var name= req.params.name;
+   names.push(name);
+   //JSON-java script object notation
+res.send(JSON.striingify(names));
+});
+
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
