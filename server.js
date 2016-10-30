@@ -2,6 +2,14 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
+var Pool= require('pg').Pool;
+var config={
+    user:'sumitk121',
+    database:'sumitk121',
+    host:'db.imad.hasura-app.io',
+    port:'5432',
+    password:process.env.DB_PASSWORD
+};
 var app = express();
 app.use(morgan('combined'));
 
@@ -86,19 +94,17 @@ var articles={
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-two',function(req, res){
-    res.send('Article two requested and will be served here');
-});
-app.get('/article-three',function(req, res){
-    res.send('Article three requested and will be served here');
-});
-app.get('/article-one',function(req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
-});
+
+
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
+app.get('/test-db',function(req,res){
+    //make a select request
+    //return a responce with the results
+});
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
