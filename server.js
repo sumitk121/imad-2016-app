@@ -23,14 +23,14 @@ var articles = {
           `
      },
      'article-two': {
-       title: 'Article Two | Tanmai Gopal',
+       title: 'Article Two | SUMIT KUMAR',
        heading: 'Article Two',
        date: 'Sep 10, 2016',
        content: `
           `
      },
      'article-three': {
-       title: 'Article Three | Tanmai Gopal',
+       title: 'Article Three | SUMIT KUMAR',
        heading: 'Article Three',
        date: 'Sep 15, 2016',
        content: `
